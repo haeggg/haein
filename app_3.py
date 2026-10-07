@@ -18,4 +18,4 @@ btn = st.button("로그인")
 with st.form("my_form"):
     submit = st.form_submit_button("전송")
 
-st.session_state.login = Ture
+st.session_state.login = True
