@@ -32,14 +32,14 @@ with col1:
     st.write("● 제작 요일: 수요일")
 with col2:
     st.write("● 제작 시간: 11:30 ~ 12:40")
-    st.write("● 제작 장소: 그린컴퓨터아트학원 대전")
+    st.write("● 제작 장소: 그린컴퓨터아트학원")
 
 
 
 #버튼 클릭 이벤트
 if st.button("인사하기"):
     if name:
-        st.success(f"안녕하세요, {name}님!")
+        st.success(f"안녕하세요, {name}님!🙌")
     else:
         st.warning("이름을 입력해 주세요.")
 
@@ -48,11 +48,11 @@ if st.button("인사하기"):
 task = "0"
 tasks = [
     "1. streamlit 활용하여 웹 페이지 만들기 "
-    "2. streamlit 제공 메서드 공부하기"
+    "2. streamlit 제공 메서드 공부하기 "
     "3. 지난 시간에 배운 파이썬 내용 복습하기 "
 ]
 
-st.subheader("※금일 할 일 목록※")
+st.subheader("✅ 금일 할 일 목록 ✅")
 
 for task in tasks:
     #border=True를 주면 각 반복 요소가 단정한 상자로 감싸짐
