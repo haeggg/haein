@@ -3,7 +3,7 @@
 import streamlit as st
 
 st.title("전해인의 첫 웹🤩")
-st.lnfo("파이썬만으로 제작하는 UI입니다.")
+st.info("파이썬만으로 제작하는 UI입니다.")
 
 col1, col2 = st.columns(2)
 with col1:
