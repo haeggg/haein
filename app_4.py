@@ -11,7 +11,14 @@ st.info("파이썬, Streamlit으로 제작한 웹 애플리케이션입니다.")
 
 
 #사용자 입력 받기
-name = st.text_input("이름을 입력해 주세요.")
+# name = st.text_input("이름을 입력해 주세요.")
+if "user_list" not in st.session_state:
+    st.session_state.user_list = []
+
+with st.form("input_form"):
+    name = st.text_input("이름을 입력해 주세요")
+    if st.form_submit_button("등록") and name:
+        st.session_state.user_list.append(name)
 
 
 #columns 설정
