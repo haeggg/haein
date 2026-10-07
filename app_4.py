@@ -11,7 +11,9 @@ st.info("파이썬, Streamlit으로 제작한 웹 애플리케이션입니다.")
 
 
 #사용자 입력 받기
+
 # name = st.text_input("이름을 입력해 주세요.")
+
 if "user_list" not in st.session_state:
     st.session_state.user_list = []
 
@@ -45,9 +47,9 @@ if st.button("인사하기"):
 #리스트 출력
 task = "0"
 tasks = [
-    "1. streamlit 연습하기 "
-    "2. streamlit 공부하기 "
-    "3. 지난 시간에 배운 것 복습하기 "
+    "1. streamlit 활용하여 웹 페이지 만들기 "
+    "2. streamlit 제공 메서드 공부하기"
+    "3. 지난 시간에 배운 파이썬 내용 복습하기 "
 ]
 
 st.subheader("※금일 할 일 목록※")
