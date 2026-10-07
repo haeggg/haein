@@ -9,7 +9,7 @@ st.title("전해인의 첫 streamlit 웹🤩")
 st.info("파이썬과 streamlit으로 제작한 웹 애플리케이션입니다.")
 
 #사용자 입력 받기
-bb = st.text_input("이름을 입력해 주세요.")
+name = st.text_input("이름을 입력해 주세요.")
 btn = btn = st.button("등록")
 
 
