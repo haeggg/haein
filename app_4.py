@@ -10,17 +10,6 @@ st.title("🐰전해인의 첫 streamlit 웹 앱🤩")
 st.info("파이썬, Streamlit으로 제작한 웹 애플리케이션입니다.")
 
 
-#사용자 입력 받기
-# name = st.text_input("이름을 입력해 주세요.")
-if "user_list" not in st.session_state:
-    st.session_state.user_list = []
-
-with st.form("input_form"):
-    name = st.text_input("이름을 입력해 주세요")
-    if st.form_submit_button("등록") and name:
-        st.session_state.user_list.append(name)
-
-
 #columns 설정
 st.subheader("웹 제작 정보")
 
@@ -31,6 +20,17 @@ with col1:
 with col2:
     st.write("● 제작 시간: 11:30 ~ 12:40")
     st.write("● 제작 장소: 그린컴퓨터아트학원 대전")
+
+
+#사용자 입력 받기
+# name = st.text_input("이름을 입력해 주세요.")
+if "user_list" not in st.session_state:
+    st.session_state.user_list = []
+
+with st.form("input_form"):
+    name = st.text_input("이름을 입력해 주세요")
+    if st.form_submit_button("등록") and name:
+        st.session_state.user_list.append(name)
 
 
 #버튼 클릭 이벤트
