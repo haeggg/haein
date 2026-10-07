@@ -30,9 +30,9 @@ if st.button("인사하기"):
 #리스트 출력
 task = "0"
 tasks = [
-    "1. streamlit 연습하기"
-    "2. streamlit 공부하기"
-    "3. 지난 시간에 배운 것 복습하기"
+    "1. streamlit 연습하기 "
+    "2. streamlit 공부하기 "
+    "3. 지난 시간에 배운 것 복습하기 "
 ]
 
 st.subheader("※금일 할 일 목록※")
