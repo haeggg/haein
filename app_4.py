@@ -3,7 +3,7 @@
 import streamlit as st
 
 #제목 설정
-st.title("🐰전해인의 첫 streamlit 웹 앱🤩")
+st.title("🐰streamlit 웹 앱🤩")
 
 
 #텍스트 출력
