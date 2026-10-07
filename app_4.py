@@ -19,11 +19,11 @@ st.subheader("웹 제작 정보")
 
 col1, col2 = st.columns(2)
 with col1:
-    st.write("제작 날짜: 2026. 10. 27.")
-    st.write("제작 요일: 수요일")
+    st.write("● 제작 날짜: 2026. 10. 27.")
+    st.write("● 제작 요일: 수요일")
 with col2:
-    st.write("제작 시간: 11:30 ~ 12:40")
-    st.write("제작 장소: 그린컴퓨터아트학원 대전")
+    st.write("● 제작 시간: 11:30 ~ 12:40")
+    st.write("● 제작 장소: 그린컴퓨터아트학원 대전")
 
 
 #버튼 클릭 이벤트
