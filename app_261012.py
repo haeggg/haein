@@ -28,7 +28,7 @@ st.subheader("─ 입력한 내 일정 보기👀 ──────────
 if st.button("버튼을 눌러 확인하기"):
 
     st.success(f"안녕하세요, {name}님!")
-    st.subheader("─ 일정 안내 ───────────────────────")
+    st.subheader("일정 안내")
 
     col1, col2 = st.columns(2)
     task = "0"
@@ -39,11 +39,11 @@ if st.button("버튼을 눌러 확인하기"):
     ]
 
     with col1:
-        st.subheader("입력한 일정입니다.")
+        st.info("입력한 일정입니다.")
         st.write(schedule)
 
     with col2:
-        st.subheader("기존 일정입니다.")
+        st.info("기존 일정입니다.")
         for task in tasks:
             with st.container(border=True):
                 st.write(task)
