@@ -21,7 +21,8 @@ with st.form("input_form2"):
         st.session_state.user_list.append(schedule)
 
 
-if st.button("입력한 내 일정 보기👀"):
+st.subheader("─ 입력한 내 일정 보기👀 ──────────────")
+if st.button("버튼을 눌러 확인하기"):
 
     col1, col2 = st.columns(2)
 
