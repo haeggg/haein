@@ -4,6 +4,7 @@ st.title("✅나의 일정관리 웹")
 st.info("이름과 일정을 입력하고 정보를 출력하는 페이지입니다.")
 
 
+st.write("<br>")
 st.divider()
 st.subheader("정보 입력 부분입니다.")
 if "user_list" not in st.session_state:
