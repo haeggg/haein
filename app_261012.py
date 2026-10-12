@@ -32,6 +32,7 @@ with st.form("input_form3"):
         st.session_state.user_list.append(schedule)
 
 
+st.write("\n")
 st.divider()
 st.subheader("입력한 내 일정 보기👀")
 if st.button("버튼을 눌러 확인하기"):
