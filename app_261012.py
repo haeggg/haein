@@ -8,7 +8,7 @@ st.subheader("─ 정보 입력 부분입니다. ──────────�
 if "user_list" not in st.session_state:
     st.session_state.user_list = []
 
-col1, col2, col3 = st.culumns(3)
+col1, col2, col3 = st.columns(3)
 
 with col1:
 
