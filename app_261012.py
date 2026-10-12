@@ -21,9 +21,6 @@ with st.form("input_form2"):
         st.session_state.user_list.append(schedule)
 
 
-
-
-
 if st.button("입력한 내 일정 보기👀"):
 
     col1, col2 = st.columns(2)
@@ -34,10 +31,12 @@ if st.button("입력한 내 일정 보기👀"):
         "② streamlit 웹 배포하기",
         "③ 오류 있는지 확인하기"
     ]
-    
+
+    st.success(f"안녕하세요, {name}님!")
+    st.subheader("일정 안내")
+
     with col1:
-        st.success(f"안녕하세요, {name}님!")
-        st.subheader("일정 안내")
+        st.write("금일 입력한 일정입니다.")
         st.write(schedule)
 
     with col2:
