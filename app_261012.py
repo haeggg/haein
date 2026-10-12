@@ -7,12 +7,12 @@ st.subheader("이름을 입력하세요.")
 if "user_list" not in st.session_state:
     st.session_state.user_list = []
 
-with st.form("input_form"):
+with st.form("input_form1"):
     name = st.text_input("이름을 입력하세요.")
     if st.form_submit_button("등록") and name:
         st.session_state.user_list.append(name)
 
-with st.form("input_form"):
+with st.form("input_form2"):
     name = st.text_input("첫 번째 일정을 입력하세요.")
     if st.form_submit_button("등록") and name:
         st.session_state.user_list.append(schedule1)
