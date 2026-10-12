@@ -8,7 +8,7 @@ st.subheader("─ 정보 입력 부분입니다. ──────────�
 if "user_list" not in st.session_state:
     st.session_state.user_list = []
 
-col1, col2, col3 = st.columns(3)
+col1, col2 = st.columns(2)
 
 with col1:
 
@@ -23,12 +23,11 @@ with col2:
         date = st.text_input("2. 날짜를 입력하세요.")
         if st.form_submit_button("등록") and name:
             st.session_state.user_list.append(date)
-with col3:
     
-    with st.form("input_form3"):
-        schedule = st.text_input("3. 일정을 입력하세요.")
-        if st.form_submit_button("등록") and name:
-            st.session_state.user_list.append(schedule)
+with st.form("input_form3"):
+    schedule = st.text_input("3. 일정을 입력하세요.")
+    if st.form_submit_button("등록") and name:
+        st.session_state.user_list.append(schedule)
 
 
 st.subheader("─ 입력한 내 일정 보기👀 ─────────────")
