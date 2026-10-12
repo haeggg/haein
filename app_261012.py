@@ -4,7 +4,8 @@ st.title("✅나의 일정관리 웹")
 st.info("이름과 일정을 입력하고 정보를 출력하는 페이지입니다.")
 
 
-st.subheader("─ 정보 입력 부분입니다. ──────────────")
+st.divider()
+st.subheader("정보 입력 부분입니다.")
 if "user_list" not in st.session_state:
     st.session_state.user_list = []
 
@@ -30,6 +31,7 @@ with st.form("input_form3"):
         st.session_state.user_list.append(schedule)
 
 
+st.divider()
 st.subheader("─ 입력한 내 일정 보기👀 ─────────────")
 if st.button("버튼을 눌러 확인하기"):
 
