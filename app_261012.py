@@ -31,13 +31,12 @@ if st.button("버튼을 눌러 확인하기"):
     st.subheader("일정 안내")
 
     col1, col2 = st.columns(2)
-    
-        task = "0"
-        tasks = [
-            "① streamlit 웹 설계하기",
-            "② streamlit 웹 배포하기",
-            "③ 오류 있는지 확인하기"
-        ]
+    task = "0"
+    tasks = [
+        "① streamlit 웹 설계하기",
+        "② streamlit 웹 배포하기",
+        "③ 오류 있는지 확인하기"
+    ]
 
     with col1:
         st.subheader("입력한 일정입니다.")
