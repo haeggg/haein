@@ -16,7 +16,7 @@ with st.form("input_form1"):
 
 
 with st.form("input_form2"):
-    name = st.text_input("일정을 입력하세요.")
+    schedule = st.text_input("일정을 입력하세요.")
     if st.form_submit_button("등록") and name:
         st.session_state.user_list.append(schedule)
 
