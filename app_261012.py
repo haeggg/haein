@@ -40,7 +40,8 @@ if st.button("버튼을 눌러 확인하기"):
 
     with col1:
         st.info("입력한 일정입니다.")
-        st.write(schedule)
+        with st.container(border=True):
+            st.write(f"① {schedule}")
 
     with col2:
         st.info("기존 일정입니다.")
