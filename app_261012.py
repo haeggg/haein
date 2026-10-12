@@ -24,7 +24,7 @@ with st.form("input_form2"):
 st.write()
 st.write()
 
-st.subheader("─ 입력한 내 일정 보기👀 ──────────────")
+st.subheader("─ 입력한 내 일정 보기👀 ────────────")
 if st.button("버튼을 눌러 확인하기"):
 
     col1, col2 = st.columns(2)
