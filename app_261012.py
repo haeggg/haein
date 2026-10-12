@@ -11,13 +11,13 @@ if "user_list" not in st.session_state:
 
 
 with st.form("input_form1"):
-    name = st.text_input("이름을 입력하세요.")
+    name = st.text_input("1. 이름을 입력하세요.")
     if st.form_submit_button("등록") and name:
         st.session_state.user_list.append(name)
 
 
 with st.form("input_form2"):
-    schedule = st.text_input("일정을 입력하세요.")
+    schedule = st.text_input("2. 일정을 입력하세요.")
     if st.form_submit_button("등록") and name:
         st.session_state.user_list.append(schedule)
 
