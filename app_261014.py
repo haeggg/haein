@@ -27,12 +27,15 @@ st.title("✅TODO 리스트")
 #    db.collection("date").add({"content": date, "at": firestore.SERVER_TIMESTAMP})
 #    st.success(f"'{date}' 추가됨!")
 
+#입력값 받기
 with st.form("input_form", clear_on_submit=True):
+    day = st.text_input("날짜를 적으세요.")
+    sub = st.form_submit_button("추가")
     task = st.text_input("할 일을 적으세요.")
     sub = st.form_submit_button("추가")
-
+    
 if sub and task:
-    db.collection("todos").add({"content": task, "at": firestore.SERVER_TIMESTAMP})
+    db.collection("todos").add({"date": day, "content": task, "at": firestore.SERVER_TIMESTAMP})
     st.success(f"'{task}' 추가됨!")
 
 
@@ -41,8 +44,9 @@ st.subheader("Todo 리스트 출력")
 docs = db.collection("todos").stream()
 
 for doc in docs:
-    col1, col2 = st.columns([8, 2])
-    col1.info(doc.to_dict()["content"])
-    if col2.button("삭제", key=doc.id):
+    col1, col2, col3 = st.columns([8, 3])
+    col1.info(doc.to_dict()["date"])
+    col2.info(doc.to_dict()["content"])
+    if col3.button("삭제", key=doc.id):
         db.collection("todos").document(doc.id).delete()
         st.rerun()
