@@ -37,15 +37,15 @@ if sub and task:
     db.collection("todos").add({"date": day, "content": task, "at": firestore.SERVER_TIMESTAMP})
     st.success(f"'{task}' 추가됨!")
 
+if st.button("버튼을 눌러 확인하기"):
+    st.subheader("Todo 리스트 출력")
 
-st.subheader("Todo 리스트 출력")
+    docs = db.collection("todos").stream()
 
-docs = db.collection("todos").stream()
-
-for doc in docs:
-    col1, col2, col3 = st.columns(3)
-#    col1.info(doc.to_dict()["date"])
-    col2.info(doc.to_dict()["content"])
-    if col3.button("삭제", key=doc.id):
-        db.collection("todos").document(doc.id).delete()
-        st.rerun()
+    for doc in docs:
+        col1, col2, col3 = st.columns(3)
+        col1.info(doc.to_dict()["date"])
+        col2.info(doc.to_dict()["content"])
+        if col3.button("삭제", key=doc.id):
+            db.collection("todos").document(doc.id).delete()
+            st.rerun()
