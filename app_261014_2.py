@@ -34,17 +34,17 @@ if st.session_state["login"]:
         sub = st.form_submit_button("추가")
     
     if sub and d_task:
-        db.collection("diary").add({"d_date": d_day, "d_content": d_task, "at": firestore.SERVER_TIMESTAMP})
+        db.collection("users").get({"d_date": d_day, "d_content": d_task, "at": firestore.SERVER_TIMESTAMP})
         st.success(f"'{d_task}' 추가됨!")
 
     st.write("\n")
     st.write("\n")
     st.divider()
+
     
-    #st.subheader(f"'{n_name}' 님의 다이어리 입니다.")
-    st.subheader("다이어리 리스트입니다.")
-    docs = db.collection("diary").stream()
+    docs = db.collection("users").stream()
     for doc in docs:
+        st.subheader("다이어리 리스트입니다.")
         st.info(doc.to_dict()["d_date"])
         st.write(doc.to_dict()["d_content"])
         if st.button("삭제", key=doc.id):
