@@ -16,8 +16,8 @@ if not firebase_admin._apps:
 
 db = firestore.client()
 
-#웹 코딩 부분
-#로그인 세션 및 회원가입 로직
+
+#로그인 완료 부분
 
 if "login" not in st.session_state: st.session_state["login"] = False
 
@@ -34,7 +34,13 @@ if st.session_state["login"]:
         db.collection("diary").add({"d_date": d_day, "d_content": d_task, "at": firestore.SERVER_TIMESTAMP})
         st.success(f"'{d_task}' 추가됨!")
 
-    st.subheader(f"'{n_name}' 님의 다이어리 입니다.")
+    st.write("\n")
+    st.write("\n")
+    st.write("\n")
+    st.divider()
+    
+    #st.subheader(f"'{n_name}' 님의 다이어리 입니다.")
+    st.subheader("다이어리 리스트입니다.")
     docs = db.collection("diary").stream()
     for doc in docs:
         st.info(doc.to_dict()["d_date"])
@@ -43,6 +49,7 @@ if st.session_state["login"]:
             db.collection("diary").document(doc.id).delete()
             st.rerun()
 
+#로그인 세션 및 회원가입 로직
 
 else:
 
