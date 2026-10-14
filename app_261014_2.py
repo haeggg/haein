@@ -41,12 +41,6 @@ if st.session_state["login"]:
     st.write("\n")
     st.divider()
 
-    #docs1 = db.collection("users").stream()
-    
-    #for doc1 in docs1:
-    #    st.subheader(doc1.to_dict()["n_name"])
-        
-    
     docs = db.collection("diary").stream()
 
     for doc in docs:
