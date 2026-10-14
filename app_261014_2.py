@@ -60,6 +60,5 @@ else:
         n_id_key = st.text_input("새 아이디", key="n_id_key")
         n_pw_key = st.text_input("새 비번", type="password", key="n_pw_key")
         if st.button("가입하기"):
-            db.collection("users").document(n_id_key).set({"password": n_pw_key})
-            db.collection("users").add({"people": n_name})
+            db.collection("users").document(n_id_key).set({"password": n_pw_key, "people": n_name})
             st.success("회원가입 완료!")
