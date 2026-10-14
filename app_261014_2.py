@@ -34,7 +34,7 @@ if st.session_state["login"]:
         db.collection("diary").add({"d_date": d_day, "d_content": d_task, "at": firestore.SERVER_TIMESTAMP})
         st.success(f"'{d_task}' 추가됨!")
 
-    st.subheader(f"{l_name} 님의 다이어리 입니다.")
+    st.subheader(f" 님의 다이어리 입니다.")
     docs = db.collection("diary").stream()
     for doc in docs:
         st.info(doc.to_dict()["d_date"])
@@ -60,5 +60,6 @@ else:
         n_id_key = st.text_input("새 아이디", key="n_id_key")
         n_pw_key = st.text_input("새 비번", type="password", key="n_pw_key")
         if st.button("가입하기"):
-            db.collection("users").document(n_id_key).set({"password": n_pw_key}).add({"people": name})
+            db.collection("users").document(n_id_key).set({"password": n_pw_key})
+            db.collection("users").add({"people": l_name})
             st.success("회원가입 완료!")
