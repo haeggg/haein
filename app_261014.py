@@ -39,7 +39,9 @@ if sub and task:
 
 st.write("\n")
 st.write("\n")
+st.write("\n")
 st.subheader("입력된 TODO 리스트 출력")
+st.divider()
 
 docs = db.collection("todos").stream()
 
