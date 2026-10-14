@@ -8,8 +8,6 @@ from firebase_admin import credentials, firestore
 
 
 
-db = firestore.client()
-
 
 st.title("해인이의 메모장")
 
