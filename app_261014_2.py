@@ -41,6 +41,7 @@ if st.session_state["login"]:
     st.write("\n")
     st.divider()
 
+    st.subheader("다이어리 리스트입니다.")
     docs = db.collection("diary").stream()
 
     for doc in docs:
