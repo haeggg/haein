@@ -19,13 +19,6 @@ db = firestore.client()
 
 st.title("✅TODO 리스트")
 
-#with st.form("input_form", clear_on_submit=True):
-#    date = st.text_input("날짜를 적으세요.")
-#    sub = st.form_submit_button("추가")
-
-#if sub and task:
-#    db.collection("date").add({"content": date, "at": firestore.SERVER_TIMESTAMP})
-#    st.success(f"'{date}' 추가됨!")
 
 #입력값 받기
 with st.form("input_form", clear_on_submit=True):
@@ -37,12 +30,13 @@ if sub and task:
     db.collection("todos").add({"date": day, "content": task, "at": firestore.SERVER_TIMESTAMP})
     st.success(f"'{task}' 추가됨!")
 
+
+#입력값 출력
 st.write("\n")
 st.write("\n")
 st.write("\n")
 st.divider()
 st.subheader("입력된 TODO 리스트 출력")
-
 
 docs = db.collection("todos").stream()
 
