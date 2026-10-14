@@ -34,7 +34,7 @@ if st.session_state["login"]:
         sub = st.form_submit_button("추가")
     
     if sub and d_task:
-        db.collection("users").get({"d_date": d_day, "d_content": d_task, "at": firestore.SERVER_TIMESTAMP})
+        db.collection("diary").add({"d_date": d_day, "d_content": d_task, "at": firestore.SERVER_TIMESTAMP})
         st.success(f"'{d_task}' 추가됨!")
 
     st.write("\n")
