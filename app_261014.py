@@ -6,6 +6,16 @@ import firebase_admin
 from firebase_admin import credentials, firestore
 
 
+#firebase 중복 초기화 방지
+
+if not firebase_admin._apps:
+    key_string = st.secrets["firebase_key"]
+    cred_dict = json.loads(key_string)
+    cred = credentials.Certificate(cred_dict)
+    firebase_admin.initialize_app(cred)
+
+db = firestore.client()
+
 
 st.title("해인이의 메모장")
 
