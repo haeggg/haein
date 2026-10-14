@@ -25,6 +25,9 @@ if st.session_state["login"]:
     st.title("나의 다이어리 웹✒️")
     if st.button("로그아웃"): st.session_state["login"] = False; st.rerun()
 
+    st.write("\n")
+    st.write("\n")
+    
     with st.form("input_form", clear_on_submit=True):
         d_day = st.text_input("날짜를 적으세요.")
         d_task = st.text_input("할 일을 적으세요.")
@@ -34,7 +37,6 @@ if st.session_state["login"]:
         db.collection("diary").add({"d_date": d_day, "d_content": d_task, "at": firestore.SERVER_TIMESTAMP})
         st.success(f"'{d_task}' 추가됨!")
 
-    st.write("\n")
     st.write("\n")
     st.write("\n")
     st.divider()
