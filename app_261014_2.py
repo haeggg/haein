@@ -41,10 +41,12 @@ if st.session_state["login"]:
     st.write("\n")
     st.divider()
 
+    st.subheader("다이어리 리스트입니다.")
     
     docs = db.collection("users").stream()
+
     for doc in docs:
-        st.subheader("다이어리 리스트입니다.")
+        
         st.info(doc.to_dict()["d_date"])
         st.write(doc.to_dict()["d_content"])
         if st.button("삭제", key=doc.id):
