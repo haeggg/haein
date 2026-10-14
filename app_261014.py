@@ -20,7 +20,7 @@ db = firestore.client()
 st.title("해인이의 메모장")
 
 with st.form("input_form", clear_on_submit=True):
-    task = st.test_input("할 일을 적으세요.")
+    task = st.test_input("텍스트를 적으세요.")
     sub = st.form_submit_button("추가")
 
 if sub and task:
