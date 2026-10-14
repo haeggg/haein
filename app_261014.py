@@ -30,7 +30,6 @@ st.title("✅TODO 리스트")
 #입력값 받기
 with st.form("input_form", clear_on_submit=True):
     day = st.text_input("날짜를 적으세요.")
-    sub = st.form_submit_button("추가")
     task = st.text_input("할 일을 적으세요.")
     sub = st.form_submit_button("추가")
     
