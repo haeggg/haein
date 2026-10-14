@@ -44,7 +44,7 @@ docs = db.collection("todos").stream()
 
 for doc in docs:
     col1, col2, col3 = st.columns(3)
-    col1.info(doc.to_dict()["date"])
+#    col1.info(doc.to_dict()["date"])
     col2.info(doc.to_dict()["content"])
     if col3.button("삭제", key=doc.id):
         db.collection("todos").document(doc.id).delete()
