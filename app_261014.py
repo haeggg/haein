@@ -37,8 +37,9 @@ if sub and task:
     db.collection("todos").add({"date": day, "content": task, "at": firestore.SERVER_TIMESTAMP})
     st.success(f"'{task}' 추가됨!")
 
-
-st.subheader("Todo 리스트 출력")
+st.write("\n")
+st.write("\n")
+st.subheader("입력된 TODO 리스트 출력")
 
 docs = db.collection("todos").stream()
 
